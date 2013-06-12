@@ -176,6 +176,19 @@ body {
   .hl-b {
     margin-left: 0.04em;
   }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: $highlight-color;
+    }
+
+    &:active {
+      top: 0.025em;
+    }
+  }
 }
 
 .subtitle-type {
@@ -512,6 +525,14 @@ ol {
 
   @media only screen and (min-width: 48em) {
     font-size: 0.95rem;
+  }
+}
+
+.four-oh-four {
+  font-size: 1rem;
+
+  @media only screen and (min-width: 48em) {
+    font-size: 2rem;
   }
 }
 
