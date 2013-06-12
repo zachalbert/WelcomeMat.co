@@ -1,0 +1,634 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+// @import "foundation";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+@import "foundation/foundation-global"; // *always required
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+@import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+@import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+/*====================================*\
+|====             BASE             ====|
+\*====================================*/
+
+@import "compass/reset";
+@import "compass/css3";
+@import "_mixins.scss";
+@import "_fonts.scss";
+
+// Typekit 'Prater Script' + 'Brandon Grotesque'
+$type-display: "ff-prater-script-web-1","ff-prater-script-web-2",Georgia,"Times New Roman",Times,serif;
+$type-copy: "brandon-grotesque-1","brandon-grotesque-2","Helvetica Neue",Helvetica,sans-serif;
+$type-mono: Monaco, 'Courier New', Courier, monospace;
+.type-display { font-family: $type-display; }
+.type-copy { font-family: $type-copy; }
+.type-mono { font-family: $type-mono; }
+
+$bg-color: #fdf6e3;
+$text-color: #809390;
+$text-dark-color: #9c907e;
+
+$bg-dark-color: #ede4ce;
+$bg-darker-color: #ccbea3;
+$bg-dark-shadow: rgba(204, 190, 163, 0.35);
+
+$highlight-color: #ff8766;
+$highlight-dark-color: #e86349;
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+body {
+  min-width: 20em;
+}
+
+@include select-color($text-color, $bg-color);
+
+.align-center { text-align: center; }
+
+p,
+ol {
+  margin-bottom: 1em;
+}
+
+body,
+h2,
+h4,
+h5,
+h6 {
+  color: $text-color;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+body {
+  @extend .type-copy;
+  background: $bg-color;
+  font-family: $type-copy;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  text-align: center;
+}
+
+
+.tagline {
+  text-align: left;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 2.5em;
+
+  @media only screen and (min-width: 27em) {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (min-width: 34em) {
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (min-width: 41em) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 48em) {
+    font-size: 1.5rem;
+  }
+}
+
+.header-type {
+  @extend .type-display;
+  @include text-shadow(0 2px 0 $highlight-dark-color);
+  color: $highlight-color;
+  font-size: 2.5rem;
+  line-height: 2.5em;
+
+  @media only screen and (min-width: 27em) {
+    @include text-shadow(0 2px 0 $highlight-dark-color);
+    font-size: 3.6em;
+    line-height: 2.25em;
+  }
+
+  @media only screen and (min-width: 34em) {
+    @include text-shadow(0 3px 0 $highlight-dark-color);
+    font-size: 4.7em;
+    line-height: 2em;
+  }
+
+  @media only screen and (min-width: 41em) {
+    @include text-shadow(0 4px 0 $highlight-dark-color);
+    font-size: 5.8em;
+    line-height: 1.75em;
+  }
+
+  @media only screen and (min-width: 48em) {
+    @include text-shadow(0 4px 0 $highlight-dark-color);
+    font-size: 7em;
+    line-height: 1.5em;
+  }
+
+  &:first-letter {
+    margin-right: -0.05em;
+  }
+
+  .hl-b {
+    margin-left: 0.04em;
+  }
+}
+
+.subtitle-type {
+  @extend .type-copy;
+  font-size: 1.2rem;
+  line-height: 1.5em;
+  margin: -0.7em 0 0;
+
+  @media only screen and (min-width: 27em) {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (min-width: 34em) {
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (min-width: 41em) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 48em) {
+    font-size: 1.6rem;
+  }
+}
+
+h3 {
+  @extend .type-display;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  padding-top: 0.5em;
+
+  @media only screen and (min-width: 27em) {
+    font-size: 1.75rem;
+    line-height: 1.5em;
+    padding-top: 0.25em;
+  }
+
+  @media only screen and (min-width: 27em) {
+    padding-top: 0;
+  }
+}
+
+code {
+  @extend .type-mono;
+  color: $text-color;
+}
+
+h4 {
+  @extend .type-display;
+  background: $highlight-color;
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1.5em;
+  padding: 0.3em 0;
+  text-align: center;
+}
+
+.reveal-modal {
+  @include border-radius(3px);
+  @include box-shadow(0 3px 20px rgba(0, 0, 0, 0.25));
+  background: $bg-color;
+  border: none;
+  color: $text-color;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+
+  .content {
+    padding: 1.5em;
+  }
+  .intro {
+    margin-bottom: 1em;
+  }
+
+  ol {
+    margin-left: 2em;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .close-reveal-modal {
+    @include opacity(0.65);
+    font-size: 2em;
+    line-height: 1.85em;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+
+    &:hover {
+      @include opacity(0.8);
+      color: #fff;
+      top: 0.03em;
+      text-decoration: none;
+    }
+
+    &:active {
+      @include opacity(1.0);
+      top: 0.1em;
+    }
+  }
+}
+
+a {
+  @include transition(all 0.3s ease-out);
+  text-decoration: none;
+  color: $highlight-color;
+  position: relative;
+  top: 0;
+
+  &:hover {
+    @include transition(all 0.05s ease-in);
+    text-decoration: underline;
+    color: $highlight-dark-color;
+  }
+
+  &:active {
+    top: 0.1em;
+  }
+}
+
+.row .row.nav-bar {
+  margin-right: 0;
+}
+
+.nav-bar {
+  font-size: 1.5rem;
+  line-height: 2.5em;
+}
+
+.nav {
+  li {
+    display: inline-block;
+    padding: 0;
+  }
+
+  a {
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+/*====================================*\
+|====            LAYOUT            ====|
+\*====================================*/
+
+.wrapper {
+  overflow: hidden;
+  padding: 2em;
+}
+
+header {
+  @include grid-column(12);
+  text-align: center;
+  margin-bottom: 2em;
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.footer {
+  color: $text-dark-color;
+  padding: 1.5em 0;
+
+  .row {
+    padding: 0 2em;
+
+    .columns:first-child {
+      float: left;
+      text-align: left;
+    }
+  }
+
+  .follow {
+    @extend .align-center;
+    padding: 0.5em 0 0;
+
+    @media only screen and (min-width: 48em) {
+      text-align: left;
+    }
+  }
+}
+
+.footer-logo {
+  @include opacity(0.65);
+  background: url('../images/footer-logo.png') no-repeat 0 0;
+  @include image-2x('../images/footer-logo@2x.png', 96px, 96px);
+  display: block;
+  height: 96px;
+  margin: 1em auto;
+  width: 96px;
+
+  @media only screen and (min-width: 48em) {
+    margin: 0 0 auto auto;
+  }
+
+  &:hover {
+    @include opacity(0.85);
+  }
+
+  &:active {
+    @include opacity(1.0);
+  }
+}
+
+.features {
+  @include box-shadow(inset 0 2px 20px $highlight-dark-color);
+  background: $highlight-color url('../images/feature-bg.png') 0 0;
+  @include image-2x('../images/feature-bg@2x.png', 447px, 230px);
+  color: #fff;
+  text-align: center;
+  padding: 1em 0 1.5em;
+
+  h3 {
+    color: #fff;
+    margin-bottom: 0.2em;
+  }
+
+  .columns {
+    @include text-shadow(0 2px 0 $highlight-dark-color);
+  }
+
+  i {
+    line-height: 5rem;
+  }
+  .icon-vanity { font-size: 3.4rem; }
+  .icon-manners { font-size: 2.1rem; }
+  .icon-snoopers { font-size: 2.8rem; }
+}
+
+/*====================================*\
+|====           MODULES            ====|
+\*====================================*/
+
+.well {
+  @include box-shadow(inset 0 3px 14px $bg-dark-shadow);
+  background: $bg-dark-color;
+
+  &.nav {
+    @include box-shadow(inset 0 -3px 14px $bg-dark-shadow);
+  }
+}
+
+ol {
+  li {
+    list-style-type: decimal;
+  }
+}
+
+.center {
+  float: left;
+  left: 50%;
+  position: relative;
+}
+
+.re-center {
+  float: left;
+  left: -50%;
+  position: relative;
+  width: 100%;
+}
+
+.ascii-wrapper {
+  @include border-radius(2px);
+  @extend .clearfix;
+  background: $bg-color;
+  border-style: solid;
+  border-color: $bg-darker-color;
+  border-width: 2px 0 0;
+  cursor: pointer;
+  float: left;
+  overflow: hidden;
+  padding: 0.5em;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  @media only screen and (min-width: 48em) {
+    padding: 2em;
+  }
+
+  .overlay {
+    @include border-radius(0 0 2px 2px);
+    background: none;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .legend {
+    @include border-radius(0 0 0 2px);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    content: "Click to copy";
+    display: none;
+    padding: 0.4em 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover .legend {
+    display: block;
+  }
+}
+
+.ascii {
+  @extend .type-mono;
+  font-size: 0.3rem;
+  line-height: 1.1em;
+  text-align: left;
+
+  @media only screen and (min-width: 27em) {
+    font-size: 0.46rem;
+  }
+
+  @media only screen and (min-width: 34em) {
+    font-size: 0.65rem;
+  }
+
+  @media only screen and (min-width: 41em) {
+    font-size: 0.75rem;
+  }
+
+  @media only screen and (min-width: 48em) {
+    font-size: 0.95rem;
+  }
+}
+
+.post {
+  @include border-radius(3px);
+  @include box-shadow(0 2px 14px $bg-dark-shadow);
+  @extend .clearfix;
+  background: $bg-dark-color;
+  border-style: solid;
+  border-color: $bg-darker-color;
+  border-width: 0 1px 10px 1px;
+  margin: 0 0 2em;
+  padding: 1em;
+}
+
+.post-meta {
+  color: $text-dark-color;
+  clear: both;
+  padding: 0.6em 0 0;
+
+  a { font-weight: bold; }
+
+  .post-size {
+    float: left;
+    text-align: left;
+
+    &:before { margin-right: 0.5em; }
+  }
+
+  .post-author {
+    float: right;
+    text-align: left;
+
+    &:before { margin-right: 0.25em; }
+
+    @media only screen and (min-width: 48em) {
+      text-align: right;
+    }
+  }
+
+  .post-size,
+  .post-author {
+    line-height: 3em;
+  }
+
+  .columns {
+
+    span {
+      @extend .type-copy;
+      font-size: 1.2em;
+    }
+
+    &.post-title {
+      @extend .type-display;
+      font-size: 1.75rem;
+      line-height: 1.75em;
+      text-align: left;
+
+      @media only screen and (min-width: 48em) {
+        position: absolute;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/*====================================*\
+|====            STATE             ====|
+\*====================================*/
+
+@media only screen and (max-width: 48em) {
+  .features {
+    .row .row {
+      .columns {
+        line-height: 4rem;
+
+        @media only screen and (min-width: 27em) {
+          margin: 10px 0;
+        }
+
+        &:last-child {
+          padding-left: 1em;
+        }
+      }
+    }
+
+    i {
+      text-align: center;
+    }
+
+    h3 {
+      text-align: left;
+      margin-bottom: 0;
+    }
+
+    p {
+      text-align: left;
+      line-height: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .icon-vanity { font-size: 2.9rem; }
+    .icon-manners { font-size: 1.7rem; }
+    .icon-snoopers { font-size: 2.2rem; }
+  }
+
+  .tagline {
+    border-top: 1px solid $bg-darker-color;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .features {
+    .row .row {
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+name: "WelcomeMat.co"
+description: "Copy & Paste ASCII Art Welcome Mats for your HTML"
+
+url: "http://welcomemat.co"
+
+paginate: 10
+
+permalink: pretty
+
+exclude: ['config.rb', 'scss', 'welcomemat.co']
