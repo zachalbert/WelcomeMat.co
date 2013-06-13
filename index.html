@@ -16,6 +16,11 @@ layout: default
       <div class="large-6 columns post-title center">
         <div class="re-center">
           {{ post.title }}
+          {% if post.via %}
+          <span class="via">
+            (with the help of <a href="{{ post.viaURL }}">{{ post.via }}</a>)
+          </span>
+          {% endif %}
         </div>
       </div>
       <div class="large-3 columns post-size icon-size"><span>{{ post.size }}</span></div>
