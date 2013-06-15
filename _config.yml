@@ -3,7 +3,7 @@ description: "Copy & Paste ASCII Art Welcome Mats for your HTML"
 
 url: "http://welcomemat.co"
 
-paginate: 10
+paginate: 100
 
 permalink: pretty
 
