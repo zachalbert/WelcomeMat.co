@@ -105,6 +105,10 @@ em {
   font-style: italic;
 }
 
+.relative {
+  position: relative;
+}
+
 body {
   @extend .type-copy;
   background: $bg-color;
@@ -356,6 +360,51 @@ header {
   }
 }
 
+header { z-index: 50; }
+nav { z-index: 100; }
+
+.award-flag {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 150px;
+  width: 34.5px;
+  height: 82px;
+  background: url('../images/cssda.png') no-repeat 0 0;
+  background-size: 34.5px 82px;
+
+  &:hover { top: 151px; }
+  &:active { top: 152px; }
+
+  @media only screen and (min-width: 34em) {
+    top: 180px;
+
+    &:hover { top: 181px; }
+    &:active { top: 182px; }
+  }
+
+  @media only screen and (min-width: 41em) {
+    top: 170px;
+    width: 51.75px;
+    height: 123px;
+    background-size: 51.75px 123px;
+
+    &:hover { top: 171px; }
+    &:active { top: 172px; }
+  }
+
+  @media only screen and (min-width: 48em) {
+    top: 80px;
+    width:  69px;
+    height: 164px;
+    background-size: 69px 164px;
+
+    &:hover { top: 81px; }
+    &:active { top: 82px; }
+  }
+}
+
 .footer {
   color: $text-dark-color;
   padding: 1.5em 0;
@@ -375,6 +424,11 @@ header {
 
     @media only screen and (min-width: 48em) {
       text-align: left;
+    }
+
+    .item {
+      float: left;
+      line-height: 3em;
     }
   }
 }

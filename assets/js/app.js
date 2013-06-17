@@ -2,12 +2,16 @@ $(document).ready(function() {
 
   // Fade some shit in
   $('.features .columns').addClass('animated fadeInLeft');
-  //$('header').addClass('animated fadeInRight');
   $('.nav').addClass('animated fadeInRight');
   $('.ascii-wrapper').hover(function () {
     $('.legend').addClass('animated fadeInDown');
   }, function () {
     $('.legend').removeClass('animated fadeInDown');
+  });
+
+  $('.award-flag').delay(3000).queue( function(next){
+    $(this).show().addClass('animated fadeInRight');
+    next();
   });
 
   function SelectText(element) {
