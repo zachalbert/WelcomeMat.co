@@ -9,8 +9,8 @@ $(document).ready(function() {
     $('.legend').removeClass('animated fadeInDown');
   });
 
-  $('.award-flag').delay(3000).queue( function(next){
-    $(this).show().addClass('animated fadeInRight');
+  $('.opl').delay(1500).queue( function(next){
+    $(this).show().addClass('animated fadeInLeft');
     next();
   });
 

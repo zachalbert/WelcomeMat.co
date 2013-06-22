@@ -1,39 +1,38 @@
 ---
 layout: default
 ---
-
-<!-- The main posts loop -->
-{% for post in site.posts %}
-<div class="row">
-  <div class="large-12 small-12 columns post">
-    <div class="ascii-wrapper" id="{{ post.slug }}">
-      <span class="legend" title="Click to select ASCII Art">Click to select</span>
-      <div class="center">
-        <pre class="ascii re-center" id="ascii-{{ post.slug }}">{{ post.content }}</pre>
-      </div>
-    </div>
-    <div class="row collapse post-meta">
-      <div class="large-6 columns post-title center">
-        <div class="re-center">
-          {{ post.title }}
-          {% if post.via %}
-          <span class="via">
-            (with the help of <a href="{{ post.viaURL }}">{{ post.via }}</a>)
-          </span>
-          {% endif %}
+      {% for post in site.posts %}
+      <div class="row">
+        <div class="large-12 small-12 columns post">
+          <div class="ascii-wrapper" id="{{ post.slug }}">
+            <span class="legend" title="Click to select ASCII Art">Click to select</span>
+            <div class="center">
+              <pre class="ascii re-center" id="ascii-{{ post.slug }}">
+{{ post.content }}</pre>
+            </div>
+          </div>
+          <div class="row collapse post-meta">
+            <div class="large-6 columns post-title center">
+              <div class="re-center">
+                {{ post.title }}
+                {% if post.via %}
+                <span class="via">
+                  (with the help of <a href="{{ post.viaURL }}">{{ post.via }}</a>)
+                </span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="large-3 columns post-size icon-size"><span>{{ post.size }}</span></div>
+            <div class="large-3 columns post-author icon-uploaded">
+              <span>
+              {% if post.authorURL %}
+                <a href="{{ post.authorURL }}" title="Submitted by {{ post.author }}">{{ post.author }}</a>
+              {% else %}
+                {{ post.author }}
+              {% endif %}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="large-3 columns post-size icon-size"><span>{{ post.size }}</span></div>
-      <div class="large-3 columns post-author icon-uploaded">
-        <span>
-        {% if post.authorURL %}
-          <a href="{{ post.authorURL }}" title="Submitted by {{ post.author }}">{{ post.author }}</a>
-        {% else %}
-          {{ post.author }}
-        {% endif %}
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-{% endfor %}
+      {% endfor %}
